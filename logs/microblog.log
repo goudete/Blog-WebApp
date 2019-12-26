@@ -1,4 +1,4 @@
-2019-12-20 20:56:27,341 ERROR: Exception on /explore [GET] [in /Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-22 22:15:01,040 ERROR: Exception on /reset_password_request [GET] [in /Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,34 +12,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/enriquegoudet/Documents/ProjectDope/app/routes.py", line 131, in explore
-    return render_template('index.html', title='Explore', posts=posts)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/enriquegoudet/Documents/ProjectDope/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/enriquegoudet/Documents/ProjectDope/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/enriquegoudet/Documents/ProjectDope/app/templates/index.html", line 18, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2019-12-20 20:58:11,202 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:45]
-2019-12-20 21:08:04,219 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:45]
-2019-12-20 21:09:54,142 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:45]
-2019-12-20 21:14:48,391 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:45]
-2019-12-20 21:14:57,912 ERROR: Exception on /user/emi [GET] [in /Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/enriquegoudet/Documents/ProjectDope/app/routes.py", line 152, in reset_password_request
+    form = ResetPasswordRequestForm()
+NameError: name 'ResetPasswordRequestForm' is not defined
+2019-12-22 22:15:50,963 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:47]
+2019-12-22 22:16:07,742 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:47]
+2019-12-22 22:16:32,426 ERROR: Exception on /reset_password_request [POST] [in /Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,14 +31,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/enriquegoudet/Documents/ProjectDope/app/routes.py", line 81, in user
-    page, app.config['POSTS_PER_PAGE'], False)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 484, in paginate
-    if page < 1:
-TypeError: '<' not supported between instances of 'str' and 'int'
-2019-12-20 21:14:58,298 ERROR: Exception on /user/emi [GET] [in /Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/enriquegoudet/Documents/ProjectDope/app/routes.py", line 154, in reset_password_request
+    user = User.query.filter_by(email=user.email.data).first()
+UnboundLocalError: local variable 'user' referenced before assignment
+2019-12-22 22:17:28,850 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:47]
+2019-12-22 22:19:08,817 ERROR: Exception on /reset_password_request [POST] [in /Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -74,12 +49,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/enriquegoudet/Documents/ProjectDope/app/routes.py", line 81, in user
-    page, app.config['POSTS_PER_PAGE'], False)
-  File "/Users/enriquegoudet/Documents/ProjectDope/venv/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 484, in paginate
-    if page < 1:
-TypeError: '<' not supported between instances of 'str' and 'int'
-2019-12-20 21:15:59,823 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:45]
-2019-12-20 21:16:44,125 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:45]
+  File "/Users/enriquegoudet/Documents/ProjectDope/app/routes.py", line 154, in reset_password_request
+    user = User.query.filter_by(email=user.email.data).first()
+UnboundLocalError: local variable 'user' referenced before assignment
+2019-12-25 16:55:15,583 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:49]
+2019-12-25 17:02:53,482 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:49]
