@@ -54,3 +54,5 @@ Traceback (most recent call last):
 UnboundLocalError: local variable 'user' referenced before assignment
 2019-12-25 16:55:15,583 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:49]
 2019-12-25 17:02:53,482 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:49]
+2019-12-25 17:25:12,572 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:51]
+2019-12-25 17:32:33,873 INFO: Microblog startup [in /Users/enriquegoudet/Documents/ProjectDope/app/__init__.py:51]
